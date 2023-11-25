@@ -14,6 +14,9 @@ import { PedidosdetailsComponent } from './components/pedidos/pedidosdetails/ped
 import { ProdutoslistComponent } from './components/produtos/produtoslist/produtoslist.component';
 import { ProdutosdetailsComponent } from './components/produtos/produtosdetails/produtosdetails.component';
 import { httpInterceptorProviders } from './interceptors/httpinterceptor.service';
+import { LoginService } from './services/login.service';
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -25,18 +28,20 @@ import { httpInterceptorProviders } from './interceptors/httpinterceptor.service
     PedidoslistComponent,
     PedidosdetailsComponent,
     ProdutoslistComponent,
-    ProdutosdetailsComponent
+    ProdutosdetailsComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   providers: [
-    httpInterceptorProviders
+    httpInterceptorProviders,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

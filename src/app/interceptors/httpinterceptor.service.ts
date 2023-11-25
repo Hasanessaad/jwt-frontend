@@ -6,7 +6,7 @@ import { Observable, catchError, of, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class HttpRequestInterceptor implements HttpInterceptor {
+export class HttpinterceptorService  implements HttpInterceptor {
 
   router = inject(Router);
 
@@ -40,5 +40,5 @@ export class HttpRequestInterceptor implements HttpInterceptor {
 }
 
 export const httpInterceptorProviders = [
-  { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true },
+  { provide: HTTP_INTERCEPTORS, useClass: HttpinterceptorService , multi: true },
 ];
